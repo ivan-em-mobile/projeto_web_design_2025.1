@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apresentacao_Web_Tarde</title>
+    <!-- Titulo do site  -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <!-- colocar icone para exibir em navegador -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- link externo para uso de fonte -->
+
+    <style>
+        :root {
+            --cor-background: #35424a;
+            --cor-mq-top: #2f4858;
+            --cor-mq-botton: #6e4e8f;
+            --cor-menu: #e8491d;
+            --cor-menu-burger: #da2e5e;
+            --cor-texto: #f5f5f5;
+        }
+
+        /* *Reset de Pagina */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* *Definir o tamanho da tela sempre forçando o não extender a tela */
+        html {
+            height: 100vh;
+            background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-attachment: scroll;
+            background-size: 400% 400%;
+            /* Faz o gradiente se mover de forma infinita */
+            animation: gradientMove 10s ease infinite;
+            margin: 0;
+            height: 100vh;
+        }
+
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            /* background: #35424a; */
+            background: var(--cor-background);
+            color: var(--cor-texto);
+
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header>h1 {
+            text-align: center;
+            color: whitesmoke;
+            /*   padding: 3px;*/
+            text-shadow: #f5f5f5 1px 1px 10px;
+            margin-top: 17px;
+        }
+
+        /* Estilo do menu */
+        menu {
+            /* background: #e8491d; */
+            /* color: whitesmoke; */
+            background: var(--cor-menu);
+            color: var(--cor-texto);
+            /*  padding: 10px 0;*/
+            text-align: center;
+        }
+
+        menu ul {
+            list-style: none;
+            /* padding: 0;*/
+        }
+
+        menu>ul {
+            list-style-type: none;
+        }
+
+        menu ul li a {
+            display: block;
+            /*padding: 7px;*/
+            text-align: center;
+            margin: auto;
+            color: var(--cor-texto);
+            text-decoration: none;
+        }
+
+        /* menu ul li {
+              display: inline;
+              margin: 0 30px;
+            }
+
+            menu ul li a {
+              color: var(--cor-texto);
+              text-decoration: none;
+            }*/
+
+        menu>ul>li>a:hover {
+            background-color: var(--cor-menu-burger);
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        #burger {
+            background: var(--cor-menu);
+            display: block;
+            color: var(--cor-texto);
+            text-align: center;
+            margin: auto;
+            padding: 7px;
+            cursor: pointer;
+            /* width: 90vw; */
+        }
+
+        #burger:hover {
+            background-color: #da2e5e;
+        }
+
+        /* Estilo do conteúdo principal */
+        main {
+            padding: 20px;
+            background: #ffffff;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #0000001a;
+            text-align: justify;
+        }
+
+        /* Estilo do artigo */
+        article {
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            max-width: 200px;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            background: var(--cor-background);
+            color: var(--cor-texto);
+            text-align: center;
+            position: relative;
+            padding: 10px 0;
+            bottom: 0;
+            /* width: 100%; */
+            /* width: 100vh; */
+            /* border-radius: 0px 0px 7px 7px; */
+        }
+
+        /* media para tablet com  largura de tela menor que 768px para o maior de 992px
+            onde sera modificado as medidas do menu, menu lista, main > article onde o menu
+            deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
+            deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
+            (na horizontal) e sua exibição de imagens */
+
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+            body {
+                /* background-image: url("../back-tablet.jpg"); */
+                background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
+                background-repeat: no-repeat;
+                background-position: top;
+                background-attachment: scroll;
+            }
+
+            #burger {
+                display: none;
+            }
+
+            menu {
+                display: block;
+                /* width: 90vw; */
+                margin: auto;
+                /* background: #e8491d; */
+                background: var(--cor-menu);
+                /* color: whitesmoke; */
+                color: var(--cor-texto);
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            menu>ul>li {
+                display: inline-block;
+                background-color: var(--cor-menu);
+            }
+
+            main {
+                width: 90vw;
+                margin: auto;
+            }
+
+            article>h2 {
+                padding-bottom: 17px;
+                width: 90vw;
+                margin: auto;
+            }
+
+            article>p {
+                text-align: justify;
+                margin-bottom: 17px;
+                text-indent: 17px;
+            }
+
+            footer {
+                background: var(--cor-background);
+                color: var(--cor-texto);
+                text-align: center;
+                position: relative;
+                padding: 10px 0;
+                bottom: 0;
+            }
+
+
+        }
+
+        /* media para pc com  largura de tela menor que 992px para o maior de 1200px
+                    onde sera modificado as medidas do menu, menu lista, main > article onde o menu
+                    deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
+                    deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
+                    (na horizontal) e sua exibição de imagens */
+
+        @media screen and (min-width: 993px) and (max-width: 1200px) {
+            body {
+                background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
+                background-repeat: no-repeat;
+                background-position: top;
+                background-attachment: scroll;
+            }
+
+            #burger {
+                display: none;
+            }
+
+            menu {
+                display: block;
+                /* width: 90vw; */
+                margin: auto;
+                /* background: #e8491d; */
+                background: var(--cor-menu);
+                /* color: whitesmoke; */
+                color: var(--cor-texto);
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            menu>ul>li {
+                display: inline-block;
+                background-color: var(--cor-menu);
+            }
+
+            main {
+                width: 90vw;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            img {
+                margin: 10px;
+            }
+
+            article>h2 {
+                padding-bottom: 17px;
+            }
+
+            article>p {
+                text-align: justify;
+                margin-bottom: 17px;
+                text-indent: 17px;
+            }
+
+            footer {
+                background: var(--cor-background);
+                color: var(--cor-texto);
+                text-align: center;
+                position: relative;
+                padding: 10px 0;
+                bottom: 0;
+            }
+
+
+        }
+
+        /* media para smart_tv com  largura de tela menor que 992px para o maior de 1200px
+                    onde sera modificado as medidas do menu, menu lista, main > article onde o menu
+                    deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
+                    deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
+                    (na horizontal) e sua exibição de imagens */
+
+        @media screen and (min-width: 1201px) {
+            body {
+                background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
+                background-repeat: no-repeat;
+                background-position: top;
+                background-attachment: scroll;
+            }
+
+            #burger {
+                display: none;
+            }
+
+            menu {
+                display: block;
+                /* width: 90vw; */
+                margin: auto;
+                /* background: #e8491d; */
+                background: var(--cor-menu);
+                /* color: whitesmoke; */
+                color: var(--cor-texto);
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            menu ul li a {
+                display: block;
+                /*padding: 7px;*/
+                text-align: center;
+                margin: auto;
+                color: var(--cor-texto);
+                text-decoration: none;
+            }
+
+            menu>ul>li>a:hover {
+                color: whitesmoke;
+                text-decoration: none;
+            }
+
+            menu>ul>li {
+                display: inline-block;
+                /*      background-color: var(--cor-menu);*/
+            }
+
+            main {
+                width: 90vw;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            img {
+                margin: 10px;
+            }
+
+            article>h2 {
+                padding-bottom: 17px;
+            }
+
+            article>p {
+                text-align: justify;
+                margin-bottom: 17px;
+                text-indent: 17px;
+            }
+
+            footer {
+                background: var(--cor-background);
+                color: var(--cor-texto);
+                text-align: center;
+                position: relative;
+                padding: 10px 0;
+                bottom: 0;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body onresize="mudouTamanho()">
+    <!-- Em uma determinada possição de tela será necessario reduzir os elementos -->
+
+    <header>
+        <h1>Projetos Web Design</h1>
+    </header>
+
+    <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">
+        menu
+    </span>
+    <!-- Exibir o menu em burger -->
+
+    <menu id="itens">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portifolioorkut_link.html">Manhã-Web Design</a></li>
+            <li><a href="portifolioorkut__link.html">Tarde-Web Design</a></li>
+
+    </menu>
+    <main>
+        <article>
+            <!-- Inicio das estruturas -->
+
+            <!-- André -->
+
+            <a href="https://dehferrz220.github.io/clean_code_work/" target="_blank"><img src="./print_andre.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@dehferrz - Clean Code</h2>
+
+            <p>Escrever código limpo é fundamental para desenvolver aplicações JavaScript que sejam legíveis, escaláveis
+                e de fácil manutenção. Adotar boas práticas, como uma organização eficiente, nomes claros, uso de
+                funções bem definidas e eliminação de redundâncias, não só melhora a qualidade do código, mas também
+                facilita a colaboração em equipe e a evolução do projeto. A modularização é um dos pilares para alcançar
+                um código limpo. Em JavaScript, isso envolve dividir o projeto em arquivos e módulos menores, cada um
+                com responsabilidades específicas. Utilizando recursos como os Módulos ECMAScript (ESM), é possível
+                importar e exportar funções, classes ou objetos, mantendo o código organizado e reutilizável. Essa
+                abordagem evita dependências desnecessárias e torna o fluxo de trabalho mais eficiente. Aplicar código
+                limpo e modularização é um investimento na qualidade do seu projeto, garantindo que ele seja robusto
+                hoje e fácil de evoluir no futuro.</p>
+
+            <!-- Eduardo -->
+
+            <a href="https://eduardo-7672.github.io/profile/" target="_blank"><img src="./print_eduardo.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@ms.edu15 - Protifolio</h2>
+
+            <p>Desenvolver um portfólio impactante é crucial para evidenciar suas habilidades e projetos. Adotar a
+                abordagem Mobile First é a melhor maneira de garantir que ele atenda às necessidades dos usuários
+                modernos. Essa estratégia prioriza o design e a funcionalidade para dispositivos móveis antes de
+                expandir para telas maiores, proporcionando uma experiência mais fluida e otimizada. Utilizando HTML,
+                CSS e JavaScript, você pode criar um portfólio responsivo, com layout dinâmico e interações envolventes.
+                Elementos como menus simplificados, imagens otimizadas e navegação intuitiva são fundamentais nessa
+                abordagem, que coloca o usuário no centro da experiência. Um portfólio Mobile First não só melhora a
+                usabilidade, mas também demonstra seu domínio das melhores práticas em design e desenvolvimento web.</p>
+
+            <!-- Erick -->
+
+            <a href="https://erik-pssp.github.io/first_mobile/" target="_blank"><img src="./print_erick.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@erikps_15 - Mobile First</h2>
+
+            <p>No desenvolvimento web moderno, adotar a abordagem Mobile First é essencial para criar experiências de
+                usuário otimizadas e acessíveis. O conceito de Mobile First envolve projetar e desenvolver inicialmente
+                para dispositivos móveis, garantindo que o design e a funcionalidade sejam priorizados para telas
+                menores antes de serem adaptados para dispositivos maiores. Ao focar primeiro nos dispositivos móveis,
+                você assegura que seu site ou aplicação seja rápido, eficiente e fácil de navegar, independentemente do
+                dispositivo utilizado. Utilizando tecnologias como HTML, CSS e JavaScript, é possível criar layouts
+                responsivos que se ajustam perfeitamente a diferentes tamanhos de tela, proporcionando uma experiência
+                de usuário consistente e agradável.</p>
+
+            <!-- Gabriel Vitor -->
+
+            <a href="https://borgez467.github.io/snake_run/" target="_blank"><img src="./print_GVitor.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@@In.gabriel__ - Snake Run</h2>
+
+            <p>A lógica do jogo envolve a manipulação do DOM, o uso de arrays para gerenciar os movimentos da cobra e a
+                implementação de eventos de teclado para um controle dinâmico. Este projeto é um excelente exemplo de
+                como conceitos como loops, funções e lógica condicional podem ser transformados em uma experiência
+                visual empolgante. Seja você um desenvolvedor iniciante ou experiente, criar o Snake Run é uma
+                oportunidade para aprimorar suas habilidades em JavaScript enquanto explora as possibilidades do
+                desenvolvimento de jogos.</p>
+
+            <!-- Guilherme Hipolito -->
+
+            <a href="https://thundergirando.github.io/portifolio/" target="_blank"><img src="./print_Hipolito.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@thundergirando - Portifolio</h2>
+
+            <p>Desenvolver um portfólio impactante é crucial para destacar suas habilidades e projetos. Adotar o
+                conceito de Mobile First é a melhor maneira de garantir que ele atenda às necessidades dos usuários
+                modernos. A abordagem Mobile First prioriza o design e a funcionalidade para dispositivos móveis antes
+                de expandir para telas maiores, resultando em uma experiência mais fluida e otimizada.
+
+                Utilizando HTML, CSS e JavaScript, você pode criar um portfólio responsivo, com layout dinâmico e
+                interações envolventes. Elementos como menus simplificados, imagens otimizadas e navegação intuitiva são
+                fundamentais nessa estratégia, que coloca o usuário no centro da experiência. Um portfólio Mobile First
+                não só melhora a usabilidade, mas também demonstra seu domínio das melhores práticas em design e
+                desenvolvimento web.</p>
+
+            <!-- Garbiel Marquez -->
+
+            <a href="https://marquesz777.github.io/snakerun/" target="_blank"><img src="./print_miura.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@b_marquesz - Snake Run</h2>
+
+            <p>A lógica do jogo envolve a manipulação do DOM, o uso de arrays para gerenciar os movimentos da cobra e a
+                implementação de eventos de teclado para um controle dinâmico. Este projeto é um excelente exemplo de
+                como conceitos como loops, funções e lógica condicional podem ser transformados em uma experiência
+                visual empolgante. Seja você um desenvolvedor iniciante ou experiente, criar o Snake Run é uma
+                oportunidade para aprimorar suas habilidades em JavaScript enquanto explora as possibilidades do
+                desenvolvimento de jogos.</p>
+
+            <!-- Guilherme Vieira -->
+
+            <a href="https://guilhermeghz.github.io/portifolio/" target="_blank"><img src="./print_guilherme.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@Ghz.vieira - Portifolio</h2>
+
+            <p>Desenvolver um portfólio impactante é crucial para destacar suas habilidades e projetos. Adotar o
+                conceito de Mobile First é a melhor maneira de garantir que ele atenda às necessidades dos usuários
+                modernos. A abordagem Mobile First prioriza o design e a funcionalidade para dispositivos móveis antes
+                de expandir para telas maiores, resultando em uma experiência mais fluida e otimizada.
+
+                Utilizando HTML, CSS e JavaScript, você pode criar um portfólio responsivo, com layout dinâmico e
+                interações envolventes. Elementos como menus simplificados, imagens otimizadas e navegação intuitiva são
+                fundamentais nessa estratégia, que coloca o usuário no centro da experiência. Um portfólio Mobile First
+                não só melhora a usabilidade, mas também demonstra seu domínio das melhores práticas em design e
+                desenvolvimento web.</p>
+
+            <!-- Henrique -->
+
+            <a href="https://rique-so07.github.io/profile/" target="_blank"><img src="./print_henrique.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@_.rrik - Portifolio</h2>
+
+            <p>Desenvolver um portfólio impactante é crucial para destacar suas habilidades e projetos. Adotar o
+                conceito de Mobile First é a melhor maneira de garantir que ele atenda às necessidades dos usuários
+                modernos. A abordagem Mobile First prioriza o design e a funcionalidade para dispositivos móveis antes
+                de expandir para telas maiores, resultando em uma experiência mais fluida e otimizada.
+
+                Utilizando HTML, CSS e JavaScript, você pode criar um portfólio responsivo, com layout dinâmico e
+                interações envolventes. Elementos como menus simplificados, imagens otimizadas e navegação intuitiva são
+                fundamentais nessa estratégia, que coloca o usuário no centro da experiência. Um portfólio Mobile First
+                não só melhora a usabilidade, mas também demonstra seu domínio das melhores práticas em design e
+                desenvolvimento web.</p>
+
+            <!-- Henrique
+
+            <a href="#" target="_blank"><img src="#" alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>Texto Tema</h2>
+
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae voluptates eius non laboriosam
+                reprehenderit incidunt nesciunt debitis dignissimos velit excepturi voluptate placeat ea esse doloremque
+                consectetur, qui, voluptatum ratione eos!</p> -->
+
+            <!-- Jack -->
+
+            <a href="https://j4ckck.github.io/portifolio/galeria.html" target="_blank"><img src="./print_jack.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@griloalbino - Portifolio</h2>
+
+            <p>Desenvolver um portfólio impactante é crucial para destacar suas habilidades e projetos. Adotar o
+                conceito de Mobile First é a melhor maneira de garantir que ele atenda às necessidades dos usuários
+                modernos. A abordagem Mobile First prioriza o design e a funcionalidade para dispositivos móveis antes
+                de expandir para telas maiores, resultando em uma experiência mais fluida e otimizada.
+
+                Utilizando HTML, CSS e JavaScript, você pode criar um portfólio responsivo, com layout dinâmico e
+                interações envolventes. Elementos como menus simplificados, imagens otimizadas e navegação intuitiva são
+                fundamentais nessa estratégia, que coloca o usuário no centro da experiência. Um portfólio Mobile First
+                não só melhora a usabilidade, mas também demonstra seu domínio das melhores práticas em design e
+                desenvolvimento web.</p>
+
+            <!-- Lais -->
+
+            <a href="https://laispaiv4.github.io/clean_code_work/" target="_blank"><img src="./print_lais.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@_.layspaivaa - Clean Code</h2>
+
+            <p>Escrever código limpo é fundamental para desenvolver aplicações JavaScript que sejam legíveis, escaláveis
+                e de fácil manutenção. Adotar boas práticas, como uma organização eficiente, nomes claros, uso de
+                funções bem definidas e eliminação de redundâncias, não só melhora a qualidade do código, mas também
+                facilita a colaboração em equipe e a evolução do projeto. A modularização é um dos pilares para alcançar
+                um código limpo. Em JavaScript, isso envolve dividir o projeto em arquivos e módulos menores, cada um
+                com responsabilidades específicas. Utilizando recursos como os Módulos ECMAScript (ESM), é possível
+                importar e exportar funções, classes ou objetos, mantendo o código organizado e reutilizável. Essa
+                abordagem evita dependências desnecessárias e torna o fluxo de trabalho mais eficiente. Aplicar código
+                limpo e modularização é um investimento na qualidade do seu projeto, garantindo que ele seja robusto
+                hoje e fácil de evoluir no futuro.</p>
+
+
+            <!-- Luis Fernando -->
+
+            <a href="https://luisfernandogsvg.github.io/Snake_Run/" target="_blank"><img src="./print_LFernando.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@Luis_fernando.junior - Snake Run</h2>
+
+            <p>A lógica do jogo envolve a manipulação do DOM, o uso de arrays para gerenciar os movimentos da cobra e a
+                implementação de eventos de teclado para um controle dinâmico. Este projeto é um excelente exemplo de
+                como conceitos como loops, funções e lógica condicional podem ser transformados em uma experiência
+                visual empolgante. Seja você um desenvolvedor iniciante ou experiente, criar o Snake Run é uma
+                oportunidade para aprimorar suas habilidades em JavaScript enquanto explora as possibilidades do
+                desenvolvimento de jogos.</p>
+
+
+            <!-- Nathaly -->
+
+            <a href="https://naahtyx.github.io/portif-lio/" target="_blank"><img src="./print_nathaly.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@naahtyx - Portifolio</h2>
+
+            <p>Desenvolver um portfólio impactante é crucial para destacar suas habilidades e projetos. Adotar o
+                conceito de Mobile First é a melhor maneira de garantir que ele atenda às necessidades dos usuários
+                modernos. A abordagem Mobile First prioriza o design e a funcionalidade para dispositivos móveis antes
+                de expandir para telas maiores, resultando em uma experiência mais fluida e otimizada.
+
+                Utilizando HTML, CSS e JavaScript, você pode criar um portfólio responsivo, com layout dinâmico e
+                interações envolventes. Elementos como menus simplificados, imagens otimizadas e navegação intuitiva são
+                fundamentais nessa estratégia, que coloca o usuário no centro da experiência. Um portfólio Mobile First
+                não só melhora a usabilidade, mas também demonstra seu domínio das melhores práticas em design e
+                desenvolvimento web.</p>
+
+            <!-- Yuri -->
+
+            <a href="https://yurisilvamurayama.github.io/portifolio/" target="_blank"><img src="./print_yuri.png"
+                    alt="Align Text and Picture" class="align-image" /></a>
+
+            <h2>@muray_ma_ - Portifolio</h2>
+
+            <p>Desenvolver um portfólio impactante é crucial para destacar suas habilidades e projetos. Adotar o
+                conceito de Mobile First é a melhor maneira de garantir que ele atenda às necessidades dos usuários
+                modernos. A abordagem Mobile First prioriza o design e a funcionalidade para dispositivos móveis antes
+                de expandir para telas maiores, resultando em uma experiência mais fluida e otimizada.
+
+                Utilizando HTML, CSS e JavaScript, você pode criar um portfólio responsivo, com layout dinâmico e
+                interações envolventes. Elementos como menus simplificados, imagens otimizadas e navegação intuitiva são
+                fundamentais nessa estratégia, que coloca o usuário no centro da experiência. Um portfólio Mobile First
+                não só melhora a usabilidade, mas também demonstra seu domínio das melhores práticas em design e
+                desenvolvimento web.</p>
+
+        </article>
+
+    </main>
+    <footer>Apresentação Web Design - @_ivanpaulino</footer>
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apresentacao_Web</title>
+  <title>Alinhar_text_pict</title>
   <!-- Titulo do site  -->
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
   <!-- colocar icone para exibir em navegador -->
@@ -41,6 +41,7 @@
       background-repeat: no-repeat;
       background-position: top;
       background-attachment: scroll;
+
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
@@ -53,6 +54,7 @@
       /* background: #35424a; */
       background: var(--cor-background);
       color: var(--cor-texto);
+
       padding: 20px 0;
       text-align: center;
     }
@@ -60,22 +62,24 @@
     header>h1 {
       text-align: center;
       color: whitesmoke;
-
+      /*   padding: 3px;*/
       text-shadow: #f5f5f5 1px 1px 10px;
       margin-top: 17px;
     }
 
     /* Estilo do menu */
     menu {
+      /* background: #e8491d; */
+      /* color: whitesmoke; */
       background: var(--cor-menu);
       color: var(--cor-texto);
-      padding: 10px 0;
+      /*  padding: 10px 0;*/
       text-align: center;
     }
 
     menu ul {
       list-style: none;
-      padding: 0;
+      /* padding: 0;*/
     }
 
     menu>ul {
@@ -90,6 +94,16 @@
       color: var(--cor-texto);
       text-decoration: none;
     }
+
+    /* menu ul li {
+              display: inline;
+              margin: 0 30px;
+            }
+
+            menu ul li a {
+              color: var(--cor-texto);
+              text-decoration: none;
+            }*/
 
     menu>ul>li>a:hover {
       background-color: var(--cor-menu-burger);
@@ -141,7 +155,9 @@
       position: relative;
       padding: 10px 0;
       bottom: 0;
-
+      /* width: 100%; */
+      /* width: 100vh; */
+      /* border-radius: 0px 0px 7px 7px; */
     }
 
     /* media para tablet com  largura de tela menor que 768px para o maior de 992px
@@ -206,6 +222,27 @@
         bottom: 0;
       }
 
+      /* Editar o tamanho da imagens */
+
+      /* img#mobile {
+                            display: none;
+                        }
+
+                        img#tablet {
+                            display: block;
+                        }
+
+                        img#print {
+                            display: none;
+                        }
+
+                        img#pc {
+                            display: none;
+                        }
+
+                        img#tv {
+                            display: none;
+                        } */
     }
 
     /* media para pc com  largura de tela menor que 992px para o maior de 1200px
@@ -274,7 +311,27 @@
         bottom: 0;
       }
 
+      /* Editar o tamanho da imagens */
 
+      /* img#mobile {
+                            display: none;
+                        }
+
+                        img#tablet {
+                            display: block;
+                        }
+
+                        img#print {
+                            display: none;
+                        }
+
+                        img#pc {
+                            display: none;
+                        }
+
+                        img#tv {
+                            display: none;
+                        } */
     }
 
     /* media para smart_tv com  largura de tela menor que 992px para o maior de 1200px
@@ -357,7 +414,27 @@
         bottom: 0;
       }
 
+      /* Editar o tamanho da imagens */
 
+      /* img#mobile {
+                            display: none;
+                        }
+
+                        img#tablet {
+                            display: block;
+                        }
+
+                        img#print {
+                            display: none;
+                        }
+
+                        img#pc {
+                            display: none;
+                        }
+
+                        img#tv {
+                            display: none;
+                        } */
     }
   </style>
 </head>
@@ -377,35 +454,44 @@
   <menu id="itens">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="portifolioorkut_link.html">Manhã-Web Design</a></li>
-      <li><a href="portifolioorkut__link.html">Tarde-Web Design</a></li>
-      <!-- <li><a href="github.html">Manhã-Lais</a></li>
+      <li><a href="portifolioorkut.html">Manhã-Marcella</a></li>
+      <li><a href="github.html">Manhã-Lais</a></li>
       <li><a href="snake.html">Manhã-Juliane</a></li>
       <li><a href="cleancode.html">Manhã-Yasmim</a></li>
       <li><a href="portifoliodanilo.html">Manhã-Danilo</a></li>
       <li><a href="snakerunmaria.html">Manhã-Maria</a></li>
       <li><a href="cleancodeluis.html">Manhã-Luis_Fernando</a></li>
       <li><a href="fundtoolsbia.html">Manhã-Beatriz</a></li>
-      <li><a href="clearcodelyn.html">Manhã-Evellyn</a></li> -->
+      <li><a href="clearcodelyn.html">Manhã-Evellyn</a></li>
+
     </ul>
   </menu>
   <main>
-    <img src="./capa_web_design.png" alt="Align Text and Picture" />
+    <a href="https://julianewebdesign.github.io/SnakeRunJuliane/" target="_blank"><img src="./print_snake.png"
+        alt="Align Text and Picture" class="align-image" /></a>
 
     <article>
-      Bem-vindo(a) à nossa vitrine criativa! Aqui você encontra os projetos desenvolvidos por jovens talentos que estão
-      dando os primeiros passos no mundo do web design. Esses trabalhos representam não apenas suas habilidades
-      técnicas, mas também sua criatividade e dedicação para transformar ideias em experiências digitais impactantes.
+      <h2>Game em JavaScript: Snake Run</h2>
 
-      Cada projeto é uma expressão única, criada a partir do aprendizado de ferramentas modernas e das melhores práticas
-      de design e desenvolvimento web. De sites interativos a layouts responsivos, nossos jovens designers demonstram
-      que estão preparados para atender às demandas do mercado e criar soluções inovadoras.
+      <p>
+        O clássico jogo Snake ganha uma nova versão interativa e divertida com Snake Run, desenvolvido inteiramente em
+        JavaScript! Este projeto combina programação criativa com desafios nostálgicos, proporcionando aprendizado e
+        diversão ao mesmo tempo.
 
-      Convidamos você a explorar, se inspirar e, quem sabe, colaborar com esses talentos em ascensão. Juntos, eles estão
-      moldando o futuro da web com paixão e originalidade.
+        No Snake Run, o jogador controla uma cobra que deve comer alimentos para crescer, evitando colidir com as
+        paredes ou com seu próprio corpo. A lógica por trás do jogo inclui manipulação de DOM, uso de arrays para
+        gerenciar os movimentos da cobra e implementação de eventos do teclado para controle dinâmico. É um exemplo
+        perfeito de como conceitos como loops, funções e lógica condicional se transformam em uma experiência visual
+        emocionante. Seja você um desenvolvedor iniciante ou avançado, criar o Snake Run é uma oportunidade de aprimorar
+        suas
+        habilidades em JavaScript enquanto explora as possibilidades de desenvolvimento de jogos.
+
+      </p>
+
+
     </article>
   </main>
-  <footer>#Apresentação Web Design - @_ivanpaulino</footer>
+  <footer>Apresentação Web Design - @_ivanpaulino</footer>
 </body>
 <script src="script.js"></script>
 
